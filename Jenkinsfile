@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Upload to AWS') {
             steps {
-                withAWS(credentials:'aws-static') {
-                    s3Upload(file:'index.html', bucket:'luisperez-jenkinspractice-nanodegree', path:'/')
-                }
+                s3Upload(bucket:'luisperez-jenkinspractice-nanodegree',file:'index.html')
             }
         }
     }
